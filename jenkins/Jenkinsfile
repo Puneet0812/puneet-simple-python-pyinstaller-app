@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'pytest puneet-simple-python-pyinstaller-app/test_calc.py'
+                sh 'pytest puneet-simple-python-pyinstaller-app/puneet-simple-python-pyinstaller-app/test_calc.py'
             }
         }
 
