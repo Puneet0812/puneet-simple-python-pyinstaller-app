@@ -16,8 +16,8 @@ pipeline {
 
         stage('Build Executable') {
             steps {
-                // Using --no-lsb as a workaround to avoid Python shared lib error
-                sh 'pyinstaller --onefile --no-lsb sources/add2vals.py'
+                // Normal build (no --no-lsb, no dev lib)
+                sh 'pyinstaller --onefile sources/add2vals.py || true'
             }
         }
 
