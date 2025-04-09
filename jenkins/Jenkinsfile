@@ -14,14 +14,9 @@ pipeline {
             }
         }
 
-        stage('Install Python Dev Libraries') {
-            steps {
-                sh 'sudo apt-get update && sudo apt-get install -y python3.12-dev'
-            }
-        }
-
         stage('Build Executable') {
             steps {
+                // Using --no-lsb as a workaround to avoid Python shared lib error
                 sh 'pyinstaller --onefile --no-lsb sources/add2vals.py'
             }
         }
